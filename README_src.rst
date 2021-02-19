@@ -88,7 +88,6 @@ Current Reference Version:
 
 .. include:: ./_REF_VERSION.sh
    :code: bash
-   :literal:
    :start-line: 7
 
 Current Reference Details:
@@ -96,7 +95,6 @@ Current Reference Details:
 
 .. include:: ./01_notes.sh
    :code: bash
-   :literal:
    :start-line: 8
    :end-line: 37
  
