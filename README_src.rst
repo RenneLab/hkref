@@ -1,8 +1,21 @@
 hkref (Hybkit-Reference)
 ==================================
-.. image:: https://img.shields.io/github/v/release/RenneLab/hkref?include_prereleases
+.. image:: https://img.shields.io/github/v/release/RenneLab/hkref?include_prereleases&logo=github
    :target: https://github.com/RenneLab/hkref/releases
    :alt: GitHub release (latest by date including pre-releases)
+.. image:: https://img.shields.io/badge/Made%20with-Python-1f425f.svg?logo=python&logoColor=white
+   :target: https://www.python.org/
+   :alt: Made with Python
+.. image:: https://img.shields.io/badge/Made%20with-Bash-1f425f.svg?logo=gnu-bash
+   :target: https://www.gnu.org/software/bash/
+   :alt: Made with Bash
+.. image:: https://img.shields.io/badge/Bio-python-yellow?logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABvFBMVEUAAAD%2F0UEoaaY3cJ%2F%2F0kD2zUWxq2Zvi4VVgJDvyUlIeJfhwk%2FItlyFlnpBdZs%2Bc5w1b6A4cZ%2F%2F%2FwD%2F0UH%2F0UE3cJ83cJ83cJ83cJ%2F%2F0UL%2F0UD%2F0T%2F%2F0UH%2F0kDXvVQ1b6A3cJ83cJ83cJ83cJ%2F%2Fzzr%2F0kT%2F00j%2F0kT%2F0z%2FMuFk7cp02cJ83cJ83cJ83cJ%2F%2F0UH%2F0UH%2F0kX%2F0kb60ELvykiHl3oAT784cZ43cJ83cJ83cJ%2F%2F0UH%2F0UH%2F0UH%2F0T9YgJDQulf%2B0UH51D43cJ83cJ81b6D%2F4TH%2F0UH%2F0UH%2F0UE3cJ8zbqGJmHn%2F0kD%2F0UE3cJ83cJ80bqDSvFX%2F0kD%2F0UE3cJ82b6BghIz%2F00D%2F0UH%2F0UE2cJ80b6CtqWj%2F0z%2F%2F0UE3cJ83cJ83cJ8YYa7%2F0kD%2F0UH%2F0UFxjIRFd5lnh4nfwlA1bp43cJ83cJ83cJ%2F%2F0UH%2F0UH%2F0UH%2F2Tm%2Fsl9Fd5k7cp08dKI7c6E3cJ83cJ%2F%2F0UH%2F0UH%2F0UH%2F0UH5z0NTfpI0b6A6cqE%2FdaM7cqEwa5z%2F0UH%2F0UH%2F0UH%2F0UH%2F0z8vbKM3cJ81b542cJ84caD%2F0UH%2F0UE3cJ83cJ%2F%2F%2F%2F%2BMZpkLAAAAk3RSTlMAAAAAAAAAAAAAAAAAAAAAAAAAAQUKTlYRBiYNBmYkifDyog4EdORih83qcl7scBzb9lBH%2BrIKA5bYH17tdwxW%2Fa0GMOV0DcOtCAu08Og8AprNa%2BtLSOtuzZsDPOjutwwHqsUOcuYyCbr%2BWQtz7WIe1Z4q3PhHTfTdHWXuhrfVsolh5nkECYTo0UQcaQ0pBiYaBQETquGoAAAAl0lEQVQY02NgIAQYGRiFGN8JMzIyvmb4yygBpBkYpRkh4ME%2FZSDJwsDwQgUiwMDCDRb4z8gNETA%2FwwMWZ2axAFLHrCGiO4BanMEssCzjWgYmZgZuEAjcDaYY%2FrMwxEItASlZxMDAlMHDw7MKKMcJUsD0n4EJTE%2Fi4soAM5ghAl8g5nBzBzCABXr%2F%2Fq%2BZxsFR0cFmxEAEAAAfKxn6VT4rZAAAAABJRU5ErkJggg%3D%3D%0A
+   :target: https://github.com/biopython/biopython
+   :alt: BioPython Project
+.. image:: http://biothings.io/static/img/powered-by-mygene.png
+   :width: 128 px
+   :target: https://mygene.info/  
+   :alt: Powered by MyGene.info
 
 | This repository is a part of the `hybkit project <http://www.github.com/RenneLab/hybkit>`_.
 | Full hybkit project documentation is available at
@@ -86,12 +99,16 @@ Hyb reference creation.
 Current Reference Version:
 ==========================
 
+Text of: *./_REF_VERSION.sh*
+
 .. include:: ./_REF_VERSION.sh
    :code: bash
    :start-line: 7
 
 Current Reference Details:
 ==========================
+
+Text of: *./01_notes.sh*
 
 .. include:: ./01_notes.sh
    :code: bash

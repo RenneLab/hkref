@@ -2,5 +2,5 @@ work_dir/*
 archive/*
 __pycache__
 .pybiomart.sqlite
-load_modules.source
+load_modules.source.sh
 make_README.sh

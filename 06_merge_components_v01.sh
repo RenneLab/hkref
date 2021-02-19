@@ -11,7 +11,14 @@ Combine individual fasta components into combined Hyb reference.
 """
 
 # Load NEW_DB_VER and NEW_DB_NAME variables:
-source _REF_VERSION.sh
+if [ -f ./_REF_VERSION.sh ]; then
+    source ./_REF_VERSION.sh
+elif [ -f ../_REF_VERSION.sh ]; then
+    source ../_REF_VERSION.sh
+else
+    echo "Can't find _REF_VERSION.sh"
+    exit 1
+fi 
 NEW_DB_FILE="${NEW_DB_NAME}.fa"
 
 # Get names of all output files
@@ -89,5 +96,9 @@ echo """
 #echo -e "\nCombining Files:\n$(find ${NODUP_FASTA_NAME_STEMS})"
 #echo -e "Into File: ${NEW_DB_FILE}"
 #cat ${NODUP_FASTA_NAME_STEMS} > ${NEW_DB_FILE} 
+
+ZIP_FILES="${NEW_DB_FILE}  ${NEW_DB_FILE/.fa/.csv}"
+echo "Zipping Files: ${ZIP_FILES}"
+gzip --best ${ZIP_FILES}
 
 echo -e "\nDone.\n"
