@@ -1,0 +1,5 @@
+work_dir/*
+archive/*
+__pycache__
+.pybiomart.sqlite
+load_modules.source
