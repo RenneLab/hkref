@@ -116,6 +116,7 @@ def retry_query(dataset, *args, **kwargs):
             print('HTTP Error, sleeping ', i * 60, '...')
             time.sleep(i * 60)
 
+
 # ---- Create a text-wrapper for output messages ---
 wrapper = textwrap.TextWrapper(width=100,
                                initial_indent='  ',
@@ -174,8 +175,8 @@ for query_name, filters in queries.items():
                                             validate='1:1')
                 detail_df.fillna('', inplace=True)
 
-    # If the query is mRNA, then remove all transcripts without a 
-    #   a corresponding RefSeq peptide ID. 
+    # If the query is mRNA, then remove all transcripts without a
+    #   a corresponding RefSeq peptide ID.
     if query_name == 'mRNA':
         detail_df = detail_df.loc[detail_df['RefSeq peptide ID'] != '']
         keep_mRNA_seqs = {c for c in detail_df.index}

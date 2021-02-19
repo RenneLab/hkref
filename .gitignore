@@ -3,3 +3,4 @@ archive/*
 __pycache__
 .pybiomart.sqlite
 load_modules.source
+make_README.sh

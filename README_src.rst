@@ -10,10 +10,10 @@ hkref (Hybkit-Reference)
 
 Description:
 ============
-| This repository includes an up-to-date human genomic sequence reference designed to be
-  compaitble with the `Hyb <https://github.com/gkudla/hyb>`_ program
+| This repository includes an up-to-date human genomic sequence reference designed to be 
+  compaitble with the `Hyb <https://github.com/gkudla/hyb>`_ program 
   for chimeric (hybrid) read calling for ribonomics experiments.
-| The method for reference library construction is based on the protocol provided in the
+| The method for reference library construction is based on the protocol provided in the 
   supplemental methods of:
 
   | Helwak, Aleksandra, et al. 'Mapping the human miRNA interactome by CLASH reveals
@@ -23,25 +23,25 @@ Description:
 | One significant departure from the original method used to create the hOH7 database included
   with Hyb is that duplicate sequences and subsequences are allowed within the reference.
   This was chosen to capture the full potential variation in transcript isoform that may
-  be present within a sequence dataset.
+  be present within a sequence dataset.   
   The reference library is primarily based on sequences downloaded from Ensembl via the
   Biomart API, with the use of miRBase for mature miRNA sequences and a few other sequence
   sources.
-
+  
 Biomart queries include:
-  * mRNA : transcript_biotype=protein_coding; cdna;
+  * mRNA : transcript_biotype=protein_coding; cdna; 
     (limited to where a RefSeq Protein Identifier Exists)
   * lncRNA : transcript_biotype=lncrna; cdna
   * other : transcript_biotype=[all remaining, excluding miRNA]; transcript_exon_intron
-
-For a detailed description of the current sequences and queries utilized, see
+  
+For a detailed description of the current sequences and queries utilized, see 
 "Current Reference Details" below.
 
 Run Reference Creation Pipeline:
 ================================
 The source code utilized to create the current version of the reference is provided here,
-and has been utilized on a unix system (bash shell).
-This code depends on `SeqKit <https://bioinf.shenwei.me/seqkit/>`_
+and has been utilized on a unix system (bash shell). 
+This code depends on `SeqKit <https://bioinf.shenwei.me/seqkit/>`_ 
 for sequence maniuplation, Python 3.6+, and multiple python packages:
 
 Required Python Packages:
@@ -51,7 +51,7 @@ Required Python Packages:
   * `biothings-client <https://pypi.org/project/biothings-client/>`_
   * `biopython <https://biopython.org/>`_
 
-The scripts can be run by executing the first script: "00_run_all_steps.sh" with all
+The scripts can be run by executing the first script: "00_run_all_steps.sh" with all 
 required resources (seqkit, python3) available on the system path.
 
 Hyb Reference Specification:
@@ -64,7 +64,7 @@ Currently identified requirements include:
     | {1}: Arbitrary Identifier (ENSG... for Ensembl Sequences)
     | {2}: Arbitrary Identifier (ENST... for Ensembl Sequences)
     | {3}: Name of gene/miRNA
-    | {4}: Ensembl-style transcript_biotype.
+    | {4}: Ensembl-style transcript_biotype. 
     |     (Note, "microRNA" must be used in place of "miRNA" for recognition by Hyb)
 
   * {1}, {2}, {seqid}, and {biotype} should contain only [a-z], [A-Z], [0-9],
@@ -72,8 +72,8 @@ Currently identified requirements include:
   * "_", ".", and "," characters are *specifically* excluded from identifiers.
 
 Examples:
-
-.. code-block:: bash
+      
+.. code-block:: bash  
 
     >ENSG00000003137_ENST00000001146_CYP26B1_mRNA
     .....
@@ -81,52 +81,22 @@ Examples:
     TGAGGTAGTAGGTTGTATAGTT
 
 Thanks to Grzegorz Kudla ( https://github.com/gkudla ) for providing information on
-Hyb reference creation.
+Hyb reference creation. 
 
 Current Reference Version:
 ==========================
 
-.. code-block:: bash
+.. include:: ./_REF_VERSION.sh
+   :code: bash
    :literal:
-
-   # Base main version number on Ensembl, then increment as needed
-   NEW_DB_VER="103-dev1"
-
-   # Database Name String
-   NEW_DB_NAME="hkref_${NEW_DB_VER}"
+   :start-line: 7
 
 Current Reference Details:
 ==========================
 
-.. code-block:: bash
+.. include:: ./01_notes.sh
+   :code: bash
    :literal:
-
-   Download a reference sequence library for the Hyb program from Ensembl
-   using the Biomart python module.
-
-   Library construction is based on the protocol provided in the supplemental methods of:
-   Helwak, Aleksandra, et al. 'Mapping the human miRNA interactome by CLASH reveals
-   frequent noncanonical binding.' Cell 153.3 (2013): 654-665.
-   http://dx.doi.org/10.1016/j.cell.2013.03.043
-
-   Biomart queries include:
-     mRNA (protein_coding; as cDNA) where a RefSeq Protein Identifier Exists
-     lncRNA (as cDNA)
-     All remaining gene_biotypes, excluding 'miRNA',
-         as unspliced transcripts ('transcript_exon_intron')
-
-   tRNAs:  genomic tRNA database http://gtrnadb.ucsc.edu/)
-   rRNAs:  NCBI Genbank Database, rRNA sequences (NR_003287.4, NR_003286.4);
-   miRNAs: miRBase release 22.1 (http://www.mirbase.org): mature human miRNAs.
-
-   These sequences are then formatted in the required {}_{}_{name}_{biotype} header
-   format for Hyb, and all extra '.' and '_' symbols are removed.
-
-   Original biotypes from the hOH7 Hyb database are:
-   Ig, lincRNA, microRNA, miscRNA, mRNA, mtrRNA, pr-tr, pseudo, rRNA, snoRNA, snRNA, Trec, tRNA
-   Other types are passed through as with the ensembl 'transcript_biotype' field.
-
-   The original protocol deduplicated sequences and removed subsequences from the reference.
-   In this protocol, these steps are omitted to include all possible annotations and splicing
-   variants in the analysis.
-
+   :start-line: 8
+   :end-line: 37
+ 
