@@ -6,16 +6,15 @@ hkref (Hybkit-Reference)
    :alt: GitHub release (latest by date including pre-releases)
 
 
-| This repository is a part of the hybkit project: available at
-  http://www.github.com/RenneLab/hybkit .
+| This repository is a part of the `hybkit project <http://www.github.com/RenneLab/hybkit>`_.
 | Full hybkit project documentation is available at
   `hybkit's ReadTheDocs <https://hybkit.readthedocs.io/>`_.
 
 Description:
 ============
 | This repository includes an up-to-date human genomic sequence reference designed to be 
-  compaitble with the Hyb program for chimeric (hybrid) read calling for ribonomics experiments,
-  data, available at https://github.com/gkudla/hyb . 
+  compaitble with the `Hyb <https://github.com/gkudla/hyb>`_ program 
+  for chimeric (hybrid) read calling for ribonomics experiments.
 | The method for reference library construction is based on the protocol provided in the 
   supplemental methods of:
 
@@ -32,10 +31,10 @@ Description:
   sources.
   
 Biomart queries include:
-  * mRNA : transcript_biotype=protein_coding; cDNA; 
+  * mRNA : transcript_biotype=protein_coding; cdna; 
     (limited to where a RefSeq Protein Identifier Exists)
-  * lncRNA (as cDNA)
-  * All remaining Ensembl transcript_biotype values, (excluding miRNA).
+  * lncRNA : transcript_biotype=lncrna; cdna
+  * other : transcript_biotype=[all remaining, excluding miRNA]; transcript_exon_intron
   
 For a detailed description of the current sequences and queries utilized, see 
 "Current Reference Details" below.
@@ -44,25 +43,25 @@ Run Reference Creation Pipeline:
 ================================
 The source code utilized to create the current version of the reference is provided here,
 and has been utilized on a unix system (bash shell). 
-This code depends on SeqKit ( https://bioinf.shenwei.me/seqkit/ )
-for sequence maniuplation, Python 3.6+, and well as multiple python packages:
+This code depends on `SeqKit <https://bioinf.shenwei.me/seqkit/>`_ 
+for sequence maniuplation, Python 3.6+, and multiple python packages:
 
 Required Python Packages:
-  * pandas 
-  * natsort
-  * pybiomart
-  * biothings-client
-  * biopython
+  * `pandas <https://pandas.pydata.org/>`_
+  * `natsort <https://pypi.org/project/natsort/>`_
+  * `pybiomart <https://pypi.org/project/pybiomart/>`_
+  * `biothings-client <https://pypi.org/project/biothings-client/>`_
+  * `biopython <https://biopython.org/>`_
 
 The scripts can be run by executing the first script: "00_run_all_steps.sh" with all 
-required resources (seqkit, python) available on the system path.
+required resources (seqkit, python3) available on the system path.
 
 Hyb Reference Specification:
 ============================
-The Hyb program has requirements about the formatting of the fasta file used for the reference.
+The Hyb program has requirements about the formatting of the FASTA file used for the reference.
 
 Currently identified requirements include:
-  * No description in header (no whitespace characters)
+  * No description in FASTA sequence header (no whitespace characters)
   * | Sequence identifier be of the form of "{1}_{2}_{seqid}_{biotype}"
     | {1}: Arbitrary Identifier (ENSG... for Ensembl Sequences)
     | {2}: Arbitrary Identifier (ENST... for Ensembl Sequences)
@@ -91,10 +90,7 @@ Current Reference Version:
 
 .. include:: ./_REF_VERSION.sh
    :code: bash
-   :start-line: 8
-   :caption: _REF_VERSION.sh (Current Reference Version)
-   :name: version_file
- 
+   :start-line: 8 
 
 Current Reference Details:
 ==========================
@@ -103,6 +99,4 @@ Current Reference Details:
    :literal:
    :start-line: 9
    :end-line: 37
-   :caption: 01_notes.sh (Current Reference Details)
-   :name: notes_file
  
