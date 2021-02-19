@@ -1,10 +1,8 @@
-
 hkref (Hybkit-Reference)
 ==================================
 .. image:: https://img.shields.io/github/v/release/RenneLab/hkref?include_prereleases
    :target: https://github.com/RenneLab/hkref/releases
    :alt: GitHub release (latest by date including pre-releases)
-
 
 | This repository is a part of the `hybkit project <http://www.github.com/RenneLab/hybkit>`_.
 | Full hybkit project documentation is available at
@@ -90,6 +88,7 @@ Current Reference Version:
 
 .. include:: ./_REF_VERSION.sh
    :code: bash
+   :literal:
    :start-line: 8 
 
 Current Reference Details:

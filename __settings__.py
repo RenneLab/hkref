@@ -9,6 +9,15 @@
 Settings for the hkref package.
 """
 
+project_id = 'hkref'
+project_name = 'Hybkit-Ref'
+version = "103-dev1"
+description = 'Up-to-date Genomic Sequence Reference Database for Hyb'
+project_url = 'https://github.com/RenneLab/hkref'
+keywords = 'genetics genomics ribonomics bioinformatics hyb CLASH qCLASH miRNA '
+keywords += 'RNA DNA vienna viennad unafold'
+name_and_version = project_name + '-' + version
+
 TOTAL_INDENT = 2
 BODY_INDENT = 2
 PROPERTY_INDENT = 4
