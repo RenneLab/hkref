@@ -9,9 +9,12 @@
 Settings for the hkref package.
 """
 
+import os
+
 project_id = 'hkref'
 project_name = 'Hybkit-Ref'
-version = "103-dev1"
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '_REF_VERSION.sh'), 'r') as version_file:
+    version = version_file.read().split('NEW_DB_VER=')[1].split()[0].strip('"')
 description = 'Up-to-date Genomic Sequence Reference Database for Hyb'
 project_url = 'https://github.com/RenneLab/hkref'
 keywords = 'genetics genomics ribonomics bioinformatics hyb CLASH qCLASH miRNA '
@@ -24,6 +27,7 @@ PROPERTY_INDENT = 4
 FINAL_WIDTH = 80
 
 USE_ALL_NAMES = True
+MAX_NAMES = 10
 
 DETAIL_DELIM = '\t'
 

@@ -7,7 +7,7 @@
 
 # Database Version
 # Base main version number on Ensembl, then increment as needed
-NEW_DB_VER="103-dev1"
+NEW_DB_VER="103-dev2"
 
 # Database Name String
 NEW_DB_NAME="hkref_${NEW_DB_VER}"

@@ -34,7 +34,7 @@ from Bio import SeqRecord, SeqIO, Seq
 # ---- Settings ----
 # Import hkref project settings
 from __settings__ import TOTAL_INDENT, BODY_INDENT, PROPERTY_INDENT, FINAL_WIDTH, \
-                         USE_ALL_NAMES, ensembl_release_num, ensembl_release_date, \
+                         USE_ALL_NAMES, MAX_NAMES, ensembl_release_num, ensembl_release_date, \
                          ensembl_url, feature_sets, sequence_attributes, biotypes, \
                          other_biotypes, all_biotypes, DETAIL_DELIM
 
@@ -46,7 +46,6 @@ queries = {
   'mRNA':   {'transcript_biotype': 'protein_coding'},
   'lncRNA': {'transcript_biotype': 'lncRNA'},
 }
-
 
 # ---- DataFrame Helper Functions ----
 def flatten_list(items):
@@ -95,7 +94,7 @@ def remove_gene_version(name):
         return name
 
 
-def sanitize_gene_name(all_names, delim='|'):
+def sanitize_gene_name(all_names, delim='|', max_items=1000):
     """Remove gene version and disallowed characters from gene names."""
     use_names = []
     for name in all_names.split(delim):
@@ -103,7 +102,7 @@ def sanitize_gene_name(all_names, delim='|'):
         for c in '_.':
             use_name.replace(c, '-')
         use_names.append(use_name)
-    return delim.join(use_names)
+    return delim.join(use_names[:max_items])
 
 
 def retry_query(dataset, *args, **kwargs):
@@ -231,7 +230,9 @@ for query_name, filters in queries.items():
 
     # Depending on USE_ALL_NAMES setting, use either combined or original gene name
     if USE_ALL_NAMES:
-        detail_df['cleaned_gene_names'] = detail_df['Cmb-Symbol'].apply(sanitize_gene_name)
+        def sanitize_with_maxlen(*args):
+            return sanitize_gene_name(*args, max_items=MAX_NAMES)
+        detail_df['cleaned_gene_names'] = detail_df['Cmb-Symbol'].apply(sanitize_with_maxlen)
     else:
         detail_df['cleaned_gene_names'] = detail_df['Gene name'].apply(sanitize_gene_name)
 
