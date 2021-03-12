@@ -43,5 +43,5 @@ done
 
 echo -e "\nDone at $(date)\n" | tee ${LOG}
 # Return output to main directory. 
-mv -v ${NEW_DB_NAME}* ../ | tee ${LOG}
+mv -v ${NEW_DB_NAME}* ../ 
 
