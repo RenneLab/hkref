@@ -99,8 +99,8 @@ def sanitize_gene_name(all_names, delim='|', max_items=1000):
     use_names = []
     for name in all_names.split(delim):
         use_name = remove_gene_version(name)
-        for c in ['_', '.', ' ', '\t', '\n']:
-            use_name.replace(c, '-')
+        for c in ['_', '.', ' ', '\t', '\n', '[', ']', ':']:
+            use_name = use_name.replace(c, '-')
         use_names.append(use_name)
     return delim.join(use_names[:max_items])
 

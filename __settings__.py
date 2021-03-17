@@ -75,41 +75,26 @@ sequence_attributes = [
     'transcript_biotype',
     ] 
 
+replace_biotypes = ['vtRNA', 'lncRNA', 'misc_RNA', 'Mt_rRNA', 'rRNA', 
+                    'snoRNA', 'snRNA', 'Mt_tRNA',
+                    'scaRNA', 'scRNA', 'sRNA', 'TEC', 'ribozyme',
+                    'IG_C_gene', 'IG_D_gene', 'IG_J_gene', 'IG_V_gene',
+                    'IG_C_pseudogene', 'IG_J_pseudogene', 'IG_pseudogene', 
+                    'IG_V_pseudogene', 'polymorphic_pseudogene', 'processed_pseudogene', 
+                    'rRNA_pseudogene', 'pseudogene', 'TR_J_pseudogene',
+                    'TR_V_pseudogene', 'transcribed_processed_pseudogene', 
+                    'transcribed_unitary_pseudogene', 'transcribed_unprocessed_pseudogene',
+                    'translated_processed_pseudogene', 'translated_unprocessed_pseudogene', 
+                    'unitary_pseudogene', 'unprocessed_pseudogene',
+                    'TR_C_gene', 'TR_D_gene', 'TR_J_gene', 'TR_V_gene'
+]
+
 biotypes = { 
-    'vault_RNA':'vtRNA',
-    'lncRNA':'lincRNA',
-    'misc_RNA':'miscRNA',
     'protein_coding':'mRNA',
-    'Mt_rRNA':'mtrRNA',
-    #'':'pr-tr',
-    #'':'pseudo',
-    'rRNA':'rRNA',
-    'snoRNA':'snoRNA',
-    'snRNA':'snRNA',
-    #'':'microRNA',
-    'Mt_tRNA':'tRNA',
 }
 
-ig_biotypes = {k:'Ig' for k in ['IG_C_gene', 'IG_D_gene', 'IG_J_gene', 'IG_V_gene']}
-
-pseudo_biotypes = {k:'pseudo' for k in ['IG_C_pseudogene', 'IG_J_pseudogene', 
-                                    'IG_pseudogene', 'IG_V_pseudogene',
-                                    'polymorphic_pseudogene', 'processed_pseudogene', 
-                                    'rRNA_pseudogene', 'pseudogene', 'TR_J_pseudogene',
-                                    'TR_V_pseudogene', 'transcribed_processed_pseudogene', 
-                                    'transcribed_unitary_pseudogene', 
-                                    'transcribed_unprocessed_pseudogene', 
-                                    'translated_processed_pseudogene', 
-                                    'translated_unprocessed_pseudogene', 
-                                    'unitary_pseudogene', 'unprocessed_pseudogene'
-                                   ]}
-
-trec_biotypes = {k:'Trec' for k in ['TR_C_gene', 'TR_D_gene', 'TR_J_gene', 'TR_V_gene']}
-
-other_biotypes = {k:k for k in ['scaRNA', 'scRNA', 'sRNA', 'TEC', 'ribozyme']}
-
-for add_biotype in [ig_biotypes, pseudo_biotypes, trec_biotypes, other_biotypes]:
-    biotypes.update(add_biotype)
+replace_biotype_dict = {k: k.replace('_', '-') for k in replace_biotypes}
+biotypes.update(replace_biotype_dict)
 
 all_biotypes = [k for k in biotypes.keys()]
 other_biotypes = [t for t in all_biotypes if t not in ['protein_coding', 'lncRNA']]
