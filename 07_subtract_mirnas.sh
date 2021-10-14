@@ -50,7 +50,7 @@ DB_NAME="${REF_DIR}/$(basename ${SEQ_FA/.fa/})"
 set -v -H -o history
 bowtie2-build --threads ${CPUS} ${SEQ_FA} ${DB_NAME}
 COMMAND="!!" ; ALL_COMMANDS="${ALL_COMMANDS}\n${COMMAND}"
-bowtie2 --no-unal -x ${DB_NAME} -f ${MIRNA_FA} --threads ${CPUS} -S ${ALN_SAM} 2>&1
+bowtie2 --no-unal -a -x ${DB_NAME} -f ${MIRNA_FA} --threads ${CPUS} -S ${ALN_SAM} 2>&1
 COMMAND="!!" ; ALL_COMMANDS="${ALL_COMMANDS}\n${COMMAND}"
 set +v +H +o history
 

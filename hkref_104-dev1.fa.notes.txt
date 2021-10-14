@@ -1,0 +1,125 @@
+  -- hyb_ensembl_104_lncRNA.fa -- 
+    File: "hyb_ensembl_104_lncRNA.fa" was created by 02_dl_hyb_ensembl_v01.py
+    (part of the hybkit project, release NA) on 2021-10-13T22:49:24.258725.
+    Details for each sequence were downloaded from the biomart interface to the
+    Ensembl database, release 104 (2021-May), accessed via:
+    "http://www.ensembl.org"
+
+    The following queries were made:
+    filters={'transcript_biotype': 'lncRNA'} | features=['ensembl_gene_id', 'ensembl_transcript_id', 'ensembl_transcript_id_version', 'external_gene_name', 'external_transcript_name', 'gene_biotype', 'transcript_biotype']
+    filters={'transcript_biotype': 'lncRNA'} | features=['ensembl_transcript_id', 'refseq_mrna', 'refseq_ncrna']
+    filters={'transcript_biotype': 'lncRNA'} | features=['ensembl_transcript_id', 'refseq_peptide']
+    filters={'transcript_biotype': 'lncRNA'} | features=['ensembl_transcript_id', 'hgnc_symbol', 'hgnc_id']
+    filters={'transcript_biotype': 'lncRNA'} | features=['ensembl_transcript_id', 'entrezgene_accession', 'entrezgene_description']
+    filters={'transcript_biotype': 'lncRNA'} | features=['ensembl_transcript_id', 'mirbase_id', 'mirbase_accession']
+    filters={'transcript_biotype': 'lncRNA'} | features=['ensembl_transcript_id', '5_utr_start', '5_utr_end', 'cdna_coding_start', 'cdna_coding_end', '3_utr_start', '3_utr_end', 'ensembl_peptide_id', 'strand', 'transcript_start', 'transcript_end', 'transcription_start_site', 'transcript_length', 'cds_start', 'cds_end']
+    filters={'transcript_biotype': 'lncRNA'} | features=['ensembl_gene_id', 'ensembl_transcript_id', 'external_gene_name', 'transcript_biotype', 'cdna']
+
+
+  -- hyb_ensembl_104_mRNA.fa -- 
+    File: "hyb_ensembl_104_mRNA.fa" was created by 02_dl_hyb_ensembl_v01.py
+    (part of the hybkit project, release NA) on 2021-10-13T22:47:45.812951.
+    Details for each sequence were downloaded from the biomart interface to the
+    Ensembl database, release 104 (2021-May), accessed via:
+    "http://www.ensembl.org"
+
+    The following queries were made:
+    filters={'transcript_biotype': 'protein_coding'} | features=['ensembl_gene_id', 'ensembl_transcript_id', 'ensembl_transcript_id_version', 'external_gene_name', 'external_transcript_name', 'gene_biotype', 'transcript_biotype']
+    filters={'transcript_biotype': 'protein_coding'} | features=['ensembl_transcript_id', 'refseq_mrna', 'refseq_ncrna']
+    filters={'transcript_biotype': 'protein_coding'} | features=['ensembl_transcript_id', 'refseq_peptide']
+    filters={'transcript_biotype': 'protein_coding'} | features=['ensembl_transcript_id', 'hgnc_symbol', 'hgnc_id']
+    filters={'transcript_biotype': 'protein_coding'} | features=['ensembl_transcript_id', 'entrezgene_accession', 'entrezgene_description']
+    filters={'transcript_biotype': 'protein_coding'} | features=['ensembl_transcript_id', 'mirbase_id', 'mirbase_accession']
+    filters={'transcript_biotype': 'protein_coding'} | features=['ensembl_transcript_id', '5_utr_start', '5_utr_end', 'cdna_coding_start', 'cdna_coding_end', '3_utr_start', '3_utr_end', 'ensembl_peptide_id', 'strand', 'transcript_start', 'transcript_end', 'transcription_start_site', 'transcript_length', 'cds_start', 'cds_end']
+    filters={'transcript_biotype': 'protein_coding'} | features=['ensembl_gene_id', 'ensembl_transcript_id', 'external_gene_name', 'transcript_biotype', 'cdna']
+
+
+  -- hyb_ensembl_104_other.fa -- 
+    File: "hyb_ensembl_104_other.fa" was created by 02_dl_hyb_ensembl_v01.py
+    (part of the hybkit project, release NA) on 2021-10-13T22:43:39.078916.
+    Details for each sequence were downloaded from the biomart interface to the
+    Ensembl database, release 104 (2021-May), accessed via:
+    "http://www.ensembl.org"
+
+    The following queries were made:
+    filters={'transcript_biotype': ['transcribed-unprocessed-pseudogene', 'transcribed_processed_pseudogene', 'transcribed_unprocessed_pseudogene', 'transcribed_unitary_pseudogene', 'translated_processed_pseudogene', 'translated_unprocessed_pseudogene', 'unitary_pseudogene', 'unprocessed_pseudogene', 'polymorphic_pseudogene', 'processed_pseudogene', 'vtRNA', 'misc_RNA', 'Mt_rRNA', 'rRNA', 'snoRNA', 'snRNA', 'Mt_tRNA', 'scaRNA', 'scRNA', 'sRNA', 'TEC', 'ribozyme', 'IG_C_gene', 'IG_D_gene', 'IG_J_gene', 'IG_V_gene', 'IG_C_pseudogene', 'IG_J_pseudogene', 'IG_pseudogene', 'IG_V_pseudogene', 'rRNA_pseudogene', 'pseudogene', 'TR_J_pseudogene', 'TR_V_pseudogene', 'TR_C_gene', 'TR_D_gene', 'TR_J_gene', 'TR_V_gene']} | features=['ensembl_gene_id', 'ensembl_transcript_id', 'ensembl_transcript_id_version', 'external_gene_name', 'external_transcript_name', 'gene_biotype', 'transcript_biotype']
+    filters={'transcript_biotype': ['transcribed-unprocessed-pseudogene', 'transcribed_processed_pseudogene', 'transcribed_unprocessed_pseudogene', 'transcribed_unitary_pseudogene', 'translated_processed_pseudogene', 'translated_unprocessed_pseudogene', 'unitary_pseudogene', 'unprocessed_pseudogene', 'polymorphic_pseudogene', 'processed_pseudogene', 'vtRNA', 'misc_RNA', 'Mt_rRNA', 'rRNA', 'snoRNA', 'snRNA', 'Mt_tRNA', 'scaRNA', 'scRNA', 'sRNA', 'TEC', 'ribozyme', 'IG_C_gene', 'IG_D_gene', 'IG_J_gene', 'IG_V_gene', 'IG_C_pseudogene', 'IG_J_pseudogene', 'IG_pseudogene', 'IG_V_pseudogene', 'rRNA_pseudogene', 'pseudogene', 'TR_J_pseudogene', 'TR_V_pseudogene', 'TR_C_gene', 'TR_D_gene', 'TR_J_gene', 'TR_V_gene']} | features=['ensembl_transcript_id', 'refseq_mrna', 'refseq_ncrna']
+    filters={'transcript_biotype': ['transcribed-unprocessed-pseudogene', 'transcribed_processed_pseudogene', 'transcribed_unprocessed_pseudogene', 'transcribed_unitary_pseudogene', 'translated_processed_pseudogene', 'translated_unprocessed_pseudogene', 'unitary_pseudogene', 'unprocessed_pseudogene', 'polymorphic_pseudogene', 'processed_pseudogene', 'vtRNA', 'misc_RNA', 'Mt_rRNA', 'rRNA', 'snoRNA', 'snRNA', 'Mt_tRNA', 'scaRNA', 'scRNA', 'sRNA', 'TEC', 'ribozyme', 'IG_C_gene', 'IG_D_gene', 'IG_J_gene', 'IG_V_gene', 'IG_C_pseudogene', 'IG_J_pseudogene', 'IG_pseudogene', 'IG_V_pseudogene', 'rRNA_pseudogene', 'pseudogene', 'TR_J_pseudogene', 'TR_V_pseudogene', 'TR_C_gene', 'TR_D_gene', 'TR_J_gene', 'TR_V_gene']} | features=['ensembl_transcript_id', 'refseq_peptide']
+    filters={'transcript_biotype': ['transcribed-unprocessed-pseudogene', 'transcribed_processed_pseudogene', 'transcribed_unprocessed_pseudogene', 'transcribed_unitary_pseudogene', 'translated_processed_pseudogene', 'translated_unprocessed_pseudogene', 'unitary_pseudogene', 'unprocessed_pseudogene', 'polymorphic_pseudogene', 'processed_pseudogene', 'vtRNA', 'misc_RNA', 'Mt_rRNA', 'rRNA', 'snoRNA', 'snRNA', 'Mt_tRNA', 'scaRNA', 'scRNA', 'sRNA', 'TEC', 'ribozyme', 'IG_C_gene', 'IG_D_gene', 'IG_J_gene', 'IG_V_gene', 'IG_C_pseudogene', 'IG_J_pseudogene', 'IG_pseudogene', 'IG_V_pseudogene', 'rRNA_pseudogene', 'pseudogene', 'TR_J_pseudogene', 'TR_V_pseudogene', 'TR_C_gene', 'TR_D_gene', 'TR_J_gene', 'TR_V_gene']} | features=['ensembl_transcript_id', 'hgnc_symbol', 'hgnc_id']
+    filters={'transcript_biotype': ['transcribed-unprocessed-pseudogene', 'transcribed_processed_pseudogene', 'transcribed_unprocessed_pseudogene', 'transcribed_unitary_pseudogene', 'translated_processed_pseudogene', 'translated_unprocessed_pseudogene', 'unitary_pseudogene', 'unprocessed_pseudogene', 'polymorphic_pseudogene', 'processed_pseudogene', 'vtRNA', 'misc_RNA', 'Mt_rRNA', 'rRNA', 'snoRNA', 'snRNA', 'Mt_tRNA', 'scaRNA', 'scRNA', 'sRNA', 'TEC', 'ribozyme', 'IG_C_gene', 'IG_D_gene', 'IG_J_gene', 'IG_V_gene', 'IG_C_pseudogene', 'IG_J_pseudogene', 'IG_pseudogene', 'IG_V_pseudogene', 'rRNA_pseudogene', 'pseudogene', 'TR_J_pseudogene', 'TR_V_pseudogene', 'TR_C_gene', 'TR_D_gene', 'TR_J_gene', 'TR_V_gene']} | features=['ensembl_transcript_id', 'entrezgene_accession', 'entrezgene_description']
+    filters={'transcript_biotype': ['transcribed-unprocessed-pseudogene', 'transcribed_processed_pseudogene', 'transcribed_unprocessed_pseudogene', 'transcribed_unitary_pseudogene', 'translated_processed_pseudogene', 'translated_unprocessed_pseudogene', 'unitary_pseudogene', 'unprocessed_pseudogene', 'polymorphic_pseudogene', 'processed_pseudogene', 'vtRNA', 'misc_RNA', 'Mt_rRNA', 'rRNA', 'snoRNA', 'snRNA', 'Mt_tRNA', 'scaRNA', 'scRNA', 'sRNA', 'TEC', 'ribozyme', 'IG_C_gene', 'IG_D_gene', 'IG_J_gene', 'IG_V_gene', 'IG_C_pseudogene', 'IG_J_pseudogene', 'IG_pseudogene', 'IG_V_pseudogene', 'rRNA_pseudogene', 'pseudogene', 'TR_J_pseudogene', 'TR_V_pseudogene', 'TR_C_gene', 'TR_D_gene', 'TR_J_gene', 'TR_V_gene']} | features=['ensembl_transcript_id', 'mirbase_id', 'mirbase_accession']
+    filters={'transcript_biotype': ['transcribed-unprocessed-pseudogene', 'transcribed_processed_pseudogene', 'transcribed_unprocessed_pseudogene', 'transcribed_unitary_pseudogene', 'translated_processed_pseudogene', 'translated_unprocessed_pseudogene', 'unitary_pseudogene', 'unprocessed_pseudogene', 'polymorphic_pseudogene', 'processed_pseudogene', 'vtRNA', 'misc_RNA', 'Mt_rRNA', 'rRNA', 'snoRNA', 'snRNA', 'Mt_tRNA', 'scaRNA', 'scRNA', 'sRNA', 'TEC', 'ribozyme', 'IG_C_gene', 'IG_D_gene', 'IG_J_gene', 'IG_V_gene', 'IG_C_pseudogene', 'IG_J_pseudogene', 'IG_pseudogene', 'IG_V_pseudogene', 'rRNA_pseudogene', 'pseudogene', 'TR_J_pseudogene', 'TR_V_pseudogene', 'TR_C_gene', 'TR_D_gene', 'TR_J_gene', 'TR_V_gene']} | features=['ensembl_transcript_id', '5_utr_start', '5_utr_end', 'cdna_coding_start', 'cdna_coding_end', '3_utr_start', '3_utr_end', 'ensembl_peptide_id', 'strand', 'transcript_start', 'transcript_end', 'transcription_start_site', 'transcript_length', 'cds_start', 'cds_end']
+    filters={'transcript_biotype': ['transcribed-unprocessed-pseudogene', 'transcribed_processed_pseudogene', 'transcribed_unprocessed_pseudogene', 'transcribed_unitary_pseudogene', 'translated_processed_pseudogene', 'translated_unprocessed_pseudogene', 'unitary_pseudogene', 'unprocessed_pseudogene', 'polymorphic_pseudogene', 'processed_pseudogene', 'vtRNA', 'misc_RNA', 'Mt_rRNA', 'rRNA', 'snoRNA', 'snRNA', 'Mt_tRNA', 'scaRNA', 'scRNA', 'sRNA', 'TEC', 'ribozyme', 'IG_C_gene', 'IG_D_gene', 'IG_J_gene', 'IG_V_gene', 'IG_C_pseudogene', 'IG_J_pseudogene', 'IG_pseudogene', 'IG_V_pseudogene', 'rRNA_pseudogene', 'pseudogene', 'TR_J_pseudogene', 'TR_V_pseudogene', 'TR_C_gene', 'TR_D_gene', 'TR_J_gene', 'TR_V_gene']} | features=['ensembl_gene_id', 'ensembl_transcript_id', 'external_gene_name', 'transcript_biotype', 'transcript_exon_intron']
+
+
+  -- hyb_genbank_202110.fa -- 
+    File: "hyb_genbank_202110.fa" was created by 03_dl_hyb_genbank_v01.py (part
+    of the hybkit project, release NA) on 2021-10-13T22:49:25.862585. Details
+    for each sequence were downloaded from the Biopython Entrez interface to the
+    NCBI Genbank database.
+
+  -- hyb_hg38-tRNAs_2013-12.fa -- 
+    File: 'hyb_hg38-tRNAs_2013-12.fa' was created by ../04_dl_databases_v01.sh
+    (part of the hybkit project, release NA) on Wed Oct 13 22:49:26 EDT 2021.
+    tRNA sequences (version 2013-12) were downloaded from the Genomic tRNA Database:
+    http://gtrnadb.ucsc.edu/genomes/eukaryota/Hsapi38/hg38-tRNAs.tar.gz
+    and identifiers were renamed to match Hyb convention.
+
+
+
+  -- hkref_104-dev1_transcripts_only_unsort.fa --
+    File: 'hkref_104-dev1_transcripts_only_unsort.fa' was created by ../06_merge_transcripts_v01.sh
+    (part of the hybkit project, release NA) on Wed Oct 13 23:04:50 EDT 2021.
+    by concatenating files:  hyb_ensembl_104_lncRNA.fa hyb_ensembl_104_mRNA.fa hyb_ensembl_104_other.fa hyb_genbank_202110.fa hyb_hg38-tRNAs_2013-12.fa 
+
+
+
+  -- hkref_104-dev1_transcripts_only.fa --
+    File: 'hkref_104-dev1_transcripts_only.fa' was created by ../06_merge_transcripts_v01.sh
+    (part of the hybkit project, release NA) on Wed Oct 13 23:05:14 EDT 2021.
+    by using seqkit seqkit/0.10.2 command:
+    seqkit sort --by-name --natural-order hkref_104-dev1_transcripts_only_unsort.fa > hkref_104-dev1_transcripts_only.fa
+
+
+
+  -- hkref_104-dev1_transcripts_only_ext.fa --
+    File: 'hkref_104-dev1_transcripts_only_ext.fa' was created by ../07_subtract_mirnas.sh
+    (part of the hybkit project, release NA) on Wed Oct 13 23:07:41 EDT 2021.
+    using bowtie2/2.4.2, bedops/2.4.30, samtools/1.10, seqkit/0.10.2, bedtools/2.30.0
+    by commands: 
+    
+bowtie2-build --threads 8 hkref_104-dev1_transcripts_only.fa miRBase_align/ensembl_ref/hkref_104-dev1_transcripts_only
+bowtie2 --no-unal -a -x miRBase_align/ensembl_ref/hkref_104-dev1_transcripts_only -f hyb_miRBase_R22.1-2018-Oct.fa --threads 8 -S miRBase_align/hyb_miRBase_R22.1-2018-Oct.sam 2>&1
+sam2bed < miRBase_align/hyb_miRBase_R22.1-2018-Oct.sam | cut -f1-6> miRBase_align/hyb_miRBase_R22.1-2018-Oct.bed
+samtools faidx hkref_104-dev1_transcripts_only.fa
+awk -v OFS='	' {'print ds@ufl.edu,1'} hkref_104-dev1_transcripts_only.fa.fai > hkref_104-dev1_transcripts_only.genome
+bedtools slop -i miRBase_align/hyb_miRBase_R22.1-2018-Oct.bed -g hkref_104-dev1_transcripts_only.genome -b -6 > miRBase_align/hyb_miRBase_R22.1-2018-Oct_trim.bed #/.bed/_unsort.bed}
+bedtools complement -i miRBase_align/hyb_miRBase_R22.1-2018-Oct_trim.bed -g hkref_104-dev1_transcripts_only.genome > miRBase_align/hyb_miRBase_R22.1-2018-Oct_complement.bed
+bedtools getfasta -fi hkref_104-dev1_transcripts_only.fa -bed miRBase_align/hyb_miRBase_R22.1-2018-Oct_complement.bed |   seqkit seq --min-len 15 --upper-case --validate-seq > hkref_104-dev1_transcripts_only_ext.fa 
+
+
+  -- hyb_miRBase_R22.1-2018-Oct.fa -- 
+    File: 'hyb_miRBase_R22.1-2018-Oct.fa' was created by ../04_dl_databases_v01.sh
+    (part of the hybkit project, release NA) on Wed Oct 13 23:04:31 EDT 2021.
+    Mature miRNA sequences (version R22.1-2018-Oct) were downloaded from miRBase:
+    ftp://mirbase.org/pub/mirbase/CURRENT/mature.fa.gz
+    were converted to DNA alphabet, 
+    and identifiers were renamed to match Hyb convention.
+
+
+
+  -- hkref_104-dev1_with_coords.fa --
+    File: 'hkref_104-dev1_with_coords.fa' was created by ../08_merge_mirnas_v01.sh
+    (part of the hybkit project, release NA) on Wed Oct 13 23:07:41 EDT 2021.
+    by concatenating files:  hkref_104-dev1_transcripts_only_ext.fa hyb_miRBase_R22.1-2018-Oct.fa 
+
+
+
+  -- hkref_104-dev1.fa --
+    File: 'hkref_104-dev1.fa' was created by 09_process_coords.py
+    (part of the hybkit project, release NA) on <built-in method now of type object at 0x2affa6727d00>.
+    Transcripts with only one portion had coordinates removed.=:
+      "ENSG_ENST_GENE_TYPE:0-100" -> "ENSG_ENST_GENE_TYPE"
+    Transcripts with multiple portions had coordinates added to the end 
+    the transcript accession:
+      "ENSG_ENST_GENE_TYPE:0-100" -> "ENSG_ENST-0-1100_GENE_TYPE"

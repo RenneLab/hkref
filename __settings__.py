@@ -13,7 +13,8 @@ import os
 
 project_id = 'hkref'
 project_name = 'Hybkit-Ref'
-with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '_REF_VERSION.sh'), 'r') as version_file:
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
+                       '_REF_VERSION.sh'), 'r') as version_file:
     version = version_file.read().split('NEW_DB_VER=')[1].split()[0].strip('"')
 description = 'Up-to-date Genomic Sequence Reference Database for Hyb'
 project_url = 'https://github.com/RenneLab/hkref'
@@ -27,16 +28,16 @@ PROPERTY_INDENT = 4
 FINAL_WIDTH = 80
 
 USE_ALL_NAMES = True
-MAX_NAMES = 10
+MAX_NAMES = 6
 
 DETAIL_DELIM = '\t'
 
-#Updated 2021-02-16
-ensembl_release_num = '103'
-ensembl_release_date = '2021-Feb'
+#Updated 2021-10-13
+ensembl_release_num = '104'
+ensembl_release_date = '2021-May'
 ensembl_url = 'http://www.ensembl.org'
 
-genbank_date_str = '202102'
+genbank_date_str = '202110'
 
 feature_sets = [
     ['ensembl_gene_id', 'ensembl_transcript_id', 'ensembl_transcript_id_version',
@@ -80,17 +81,24 @@ replace_biotypes = ['vtRNA', 'lncRNA', 'misc_RNA', 'Mt_rRNA', 'rRNA',
                     'scaRNA', 'scRNA', 'sRNA', 'TEC', 'ribozyme',
                     'IG_C_gene', 'IG_D_gene', 'IG_J_gene', 'IG_V_gene',
                     'IG_C_pseudogene', 'IG_J_pseudogene', 'IG_pseudogene', 
-                    'IG_V_pseudogene', 'polymorphic_pseudogene', 'processed_pseudogene', 
+                    'IG_V_pseudogene', 
                     'rRNA_pseudogene', 'pseudogene', 'TR_J_pseudogene',
-                    'TR_V_pseudogene', 'transcribed_processed_pseudogene', 
-                    'transcribed_unitary_pseudogene', 'transcribed_unprocessed_pseudogene',
-                    'translated_processed_pseudogene', 'translated_unprocessed_pseudogene', 
-                    'unitary_pseudogene', 'unprocessed_pseudogene',
+                    'TR_V_pseudogene', 
                     'TR_C_gene', 'TR_D_gene', 'TR_J_gene', 'TR_V_gene'
 ]
 
 biotypes = { 
     'protein_coding':'mRNA',
+    'transcribed-unprocessed-pseudogene': 'tra-unp-pseudogene',
+    'transcribed_processed_pseudogene': 'tra-unp-pseudogene',
+    'transcribed_unprocessed_pseudogene': 'tra-unp-pseudogene',
+    'transcribed_unitary_pseudogene': 'tra-unp-pseudogene',
+    'translated_processed_pseudogene': 'trs-unp-pseudogene',
+    'translated_unprocessed_pseudogene': 'trs-unp-pseudogene',
+    'unitary_pseudogene': 'uni-pseudogene',
+    'unprocessed_pseudogene': 'unp-pseudogene',
+    'polymorphic_pseudogene': 'poly-pseudogene',
+    'processed_pseudogene': 'pro-pseudogene',
 }
 
 replace_biotype_dict = {k: k.replace('_', '-') for k in replace_biotypes}

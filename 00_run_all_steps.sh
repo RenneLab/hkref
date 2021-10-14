@@ -44,11 +44,11 @@ echo "Starting on $(date)" > ${LOG}
 # Run each script 
 for script in ${SCRIPT_NAMES} ; do
   if [ "${script}" != "$(basename $0)" ] ; then
-    ../$script ${USER_EMAIL} ${USE_MODULES} | tee ${LOG}
+    ../$script ${USER_EMAIL} ${USE_MODULES} | tee -a ${LOG}
   fi
 done
 
-echo -e "\nDone at $(date)\n" | tee ${LOG}
+echo -e "\nDone at $(date)\n" | tee -a ${LOG}
 # Return output to main directory. 
 mv -v ${NEW_DB_NAME}.* ../ 
 mv -v ${LOG} ../ 
