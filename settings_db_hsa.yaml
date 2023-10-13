@@ -1,0 +1,57 @@
+---
+ title: hsa-110-dev1
+ ensembl_db_ver: 110
+ ensembl_db_release_date: 2023-Jul
+ ensembl_db_url: 'http://www.ensembl.org'
+ ensembl_hkref_db_ver: 110-dev1
+ ensembl_biomart_dataset: 'hsapiens_gene_ensembl'
+ ensembl_biotype_sets:
+   test: TR_V_gene
+   protein_coding: protein_coding
+   lncRNA: lncRNA
+   rRNA: Mt_rRNA rRNA rRNA_pseudogene
+   tRNA: Mt_tRNA
+   other: >- 
+     vtRNA misc_RNA snoRNA snRNA scaRNA scRNA sRNA TEC miRNA 
+     ribozyme IG_C_gene IG_D_gene IG_J_gene IG_V_gene IG_C_pseudogene IG_J_pseudogene 
+     IG_pseudogene IG_V_pseudogene pseudogene TR_J_pseudogene 
+     TR_V_pseudogene TR_C_gene TR_D_gene TR_J_gene TR_V_gene  
+     transcribed-unprocessed-pseudogene transcribed_processed_pseudogene 
+     transcribed_unprocessed_pseudogene transcribed_unitary_pseudogene 
+     translated_processed_pseudogene translated_unprocessed_pseudogene unitary_pseudogene 
+     unprocessed_pseudogene polymorphic_pseudogene processed_pseudogene
+
+ genbank_db_acc_date: '20231011'
+ genbank_accessions:
+   rRNA: ['NR_003287.4', 'NR_003286.4']
+
+ #mirbase_db_ver: "R22.1-2018-Oct"
+ #mirbase_db_url: "https://mirbase.org/ftp/CURRENT/mature.fa.gz"
+ mirbase_db_ver: "R22-2018-Mar"
+ mirbase_db_url: "https://zenodo.org/record/3502295/files/mature.fa.gz"
+ mirbase_db_detail: "miRBase release 22 (http://www.mirbase.org via zenodo.org/record/3502295 ): mature human miRNAs"
+
+ ext_dbs:
+   # Each Ext DB requires: version, source, url, detail, 
+   #   prep_commands, prepped_name, proc_commands, and out_name
+   tRNA:
+     version: "2013-12"
+     source: "Genomic tRNA Database"
+     url: "http://gtrnadb.ucsc.edu/genomes/eukaryota/Hsapi38/hg38-tRNAs.tar.gz"
+     detail: "genomic tRNA database http://gtrnadb.ucsc.edu/"
+     # Commands to prepare output of wget for sequence processing -> prepped_name
+     #   Double quote characters (") are disallowed
+     prep_commands: >- 
+       tar -xvf hg38-tRNAs.tar.gz
+     prepped_name: hg38-tRNAs.fa
+     # Commands to process "$ cat prepped_name" | [commands] > [out_dir]/out_name
+     #   Double quote characters (") are disallowed
+     proc_commands: >-
+       seqkit replace -p '\s.+' 
+       | seqkit replace -p '_'
+       | seqkit replace -p 'Homosapiens' -r 'tRNASCAN_tRNASeq_' 
+       | seqkit replace -p '$' -r '_tRNA'  
+     # Will have prefix added ( [db_name]_out_file_name )
+     out_name: hg38-tRNAs_2013-12.fa
+     #seqkit sort --natural-order
+

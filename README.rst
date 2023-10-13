@@ -33,17 +33,14 @@ Description:
     frequent noncanonical binding.' Cell 153.3 (2013): 654-665.
     http://dx.doi.org/10.1016/j.cell.2013.03.043
 
-| One significant departure from the original method used to create the hOH7 database included
-  with Hyb is that duplicate sequences and subsequences are allowed within the reference.
-  This was chosen to capture the full potential variation in transcript isoform that may
-  be present within a sequence dataset.
-  The reference library is primarily based on sequences downloaded from Ensembl via the
+| The reference library is primarily based on sequences downloaded from Ensembl via the
   Biomart API, with the use of miRBase for mature miRNA sequences and a few other sequence
   sources.
 
 Biomart queries include:
   * mRNA : transcript_biotype=protein_coding; cdna;
     (limited to where a RefSeq Protein Identifier Exists)
+  * lncRNA : transcript_biotype=lncrna; cdna
   * lncRNA : transcript_biotype=lncrna; cdna
   * other : transcript_biotype=[all remaining, excluding miRNA]; transcript_exon_intron
 
@@ -63,6 +60,7 @@ Required Python Packages:
   * `pybiomart <https://pypi.org/project/pybiomart/>`_
   * `biothings-client <https://pypi.org/project/biothings-client/>`_
   * `biopython <https://biopython.org/>`_
+  * pyyaml
 
 The scripts can be run by executing the first script: "00_run_all_steps.sh" with all
 required resources (seqkit, python3) available on the system path.
@@ -96,20 +94,6 @@ Examples:
 Thanks to Grzegorz Kudla ( https://github.com/gkudla ) for providing information on
 Hyb reference creation.
 
-Current Reference Version:
-==========================
-
-Text of: *./_REF_VERSION.sh*
-
-.. code-block:: bash
-
-    # Database Version
-    # Base main version number on Ensembl, then increment as needed
-    NEW_DB_VER="103-dev1"
-
-    # Database Name String
-    NEW_DB_NAME="hkref_${NEW_DB_VER}"
-
 Current Reference Details:
 ==========================
 
@@ -124,11 +108,12 @@ Text of: *./01_notes.sh*
     Helwak, Aleksandra, et al. 'Mapping the human miRNA interactome by CLASH reveals
     frequent noncanonical binding.' Cell 153.3 (2013): 654-665.
     http://dx.doi.org/10.1016/j.cell.2013.03.043
+    ( Supplemental methods section found only in PDF-fulltext )
 
     Biomart queries include:
-      mRNA (protein_coding; as cDNA) where a RefSeq Protein Identifier Exists
+      protein_coding (as cDNA)
       lncRNA (as cDNA)
-      All remaining gene_biotypes, excluding 'miRNA',
+      All remaining gene_biotypes
           as unspliced transcripts ('transcript_exon_intron')
 
     tRNAs:  genomic tRNA database http://gtrnadb.ucsc.edu/)
@@ -140,9 +125,13 @@ Text of: *./01_notes.sh*
 
     Original biotypes from the hOH7 Hyb database are:
     Ig, lincRNA, microRNA, miscRNA, mRNA, mtrRNA, pr-tr, pseudo, rRNA, snoRNA, snRNA, Trec, tRNA
-    Other types are passed through as with the ensembl 'transcript_biotype' field.
+    In this version, biotypes are passed through as with the ensembl 'transcript_biotype' field.
 
-    The original protocol deduplicated sequences and removed subsequences from the reference.
-    In this protocol, these steps are omitted to include all possible annotations and splicing
-    variants in the analysis.
+    In order to facillitate unambiguous miRNA alignment, mature iRNA sequences are aligned to the
+    reference transcriptome, and any alignemnts within transcripts are masked. This is performed to
+    ensure both that each given miRNA sequence has only a single reference alignment, as well as
+    to allow miRNA precursor transcripts to be identified as hybrid targets.
+
+    """
+    echo "${NOTES}"
 

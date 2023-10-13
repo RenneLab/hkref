@@ -1,0 +1,9 @@
+---
+ project_id: 'hkref'
+ project_name: 'Hybkit-Ref'
+ description: 'Genomic Sequence Reference Database for Hybrid Sequence Analysis'
+ project_url: 'https://github.com/RenneLab/hkref'
+ keywords: >-
+   genetics genomics ribonomics bioinformatics hyb CLASH qCLASH miRNA 
+   RNA DNA vienna viennad unafold
+ 

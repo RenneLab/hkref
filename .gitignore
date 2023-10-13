@@ -1,6 +1,12 @@
-work_dir/*
-archive/*
+envs_singularity
+envs_conda
+hkref_working
+work
+archive
 __pycache__
-.pybiomart.sqlite
-load_modules.source.sh
-make_README.sh
+.nextflow*
+nf_logs
+next.*
+private
+load_resources.source.sh
+*.sbatch

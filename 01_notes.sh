@@ -13,11 +13,12 @@ Library construction is based on the protocol provided in the supplemental metho
 Helwak, Aleksandra, et al. 'Mapping the human miRNA interactome by CLASH reveals 
 frequent noncanonical binding.' Cell 153.3 (2013): 654-665. 
 http://dx.doi.org/10.1016/j.cell.2013.03.043 
+( Supplemental methods section found only in PDF-fulltext )
 
 Biomart queries include:
-  mRNA (protein_coding; as cDNA) where a RefSeq Protein Identifier Exists
+  protein_coding (as cDNA)
   lncRNA (as cDNA)
-  All remaining gene_biotypes, excluding 'miRNA', 
+  All remaining gene_biotypes
       as unspliced transcripts ('transcript_exon_intron')
 
 tRNAs:  genomic tRNA database http://gtrnadb.ucsc.edu/)
@@ -29,11 +30,12 @@ format for Hyb, and all extra '.' and '_' symbols are removed.
 
 Original biotypes from the hOH7 Hyb database are:
 Ig, lincRNA, microRNA, miscRNA, mRNA, mtrRNA, pr-tr, pseudo, rRNA, snoRNA, snRNA, Trec, tRNA
-Other types are passed through as with the ensembl 'transcript_biotype' field.
+In this version, biotypes are passed through as with the ensembl 'transcript_biotype' field.
 
-The original protocol deduplicated sequences and removed subsequences from the reference. 
-In this protocol, these steps are omitted to include all possible annotations and splicing
-variants in the analysis.
+In order to facillitate unambiguous miRNA alignment, mature iRNA sequences are aligned to the 
+reference transcriptome, and any alignemnts within transcripts are masked. This is performed to
+ensure both that each given miRNA sequence has only a single reference alignment, as well as 
+to allow miRNA precursor transcripts to be identified as hybrid targets.
 
 """
 echo "${NOTES}"

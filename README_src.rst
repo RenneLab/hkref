@@ -33,17 +33,14 @@ Description:
     frequent noncanonical binding.' Cell 153.3 (2013): 654-665.
     http://dx.doi.org/10.1016/j.cell.2013.03.043
 
-| One significant departure from the original method used to create the hOH7 database included
-  with Hyb is that duplicate sequences and subsequences are allowed within the reference.
-  This was chosen to capture the full potential variation in transcript isoform that may
-  be present within a sequence dataset.   
-  The reference library is primarily based on sequences downloaded from Ensembl via the
+| The reference library is primarily based on sequences downloaded from Ensembl via the
   Biomart API, with the use of miRBase for mature miRNA sequences and a few other sequence
   sources.
   
 Biomart queries include:
   * mRNA : transcript_biotype=protein_coding; cdna; 
     (limited to where a RefSeq Protein Identifier Exists)
+  * lncRNA : transcript_biotype=lncrna; cdna
   * lncRNA : transcript_biotype=lncrna; cdna
   * other : transcript_biotype=[all remaining, excluding miRNA]; transcript_exon_intron
   
@@ -63,6 +60,7 @@ Required Python Packages:
   * `pybiomart <https://pypi.org/project/pybiomart/>`_
   * `biothings-client <https://pypi.org/project/biothings-client/>`_
   * `biopython <https://biopython.org/>`_
+  * pyyaml
 
 The scripts can be run by executing the first script: "00_run_all_steps.sh" with all 
 required resources (seqkit, python3) available on the system path.
@@ -96,15 +94,6 @@ Examples:
 Thanks to Grzegorz Kudla ( https://github.com/gkudla ) for providing information on
 Hyb reference creation. 
 
-Current Reference Version:
-==========================
-
-Text of: *./_REF_VERSION.sh*
-
-.. include:: ./_REF_VERSION.sh
-   :code: bash
-   :start-line: 7
-
 Current Reference Details:
 ==========================
 
@@ -113,5 +102,4 @@ Text of: *./01_notes.sh*
 .. include:: ./01_notes.sh
    :code: bash
    :start-line: 8
-   :end-line: 37
  

@@ -1,0 +1,7 @@
+---
+ total_indent: 2
+ body_indent: 2
+ property_indent: 4
+ final_width: 80
+
+ detail_delim_char: "\t"
