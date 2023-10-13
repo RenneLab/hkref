@@ -1,6 +1,7 @@
 envs_singularity
 envs_conda
 hkref_working
+README_src.rst
 work
 archive
 __pycache__

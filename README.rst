@@ -41,29 +41,35 @@ Biomart queries include:
   * mRNA : transcript_biotype=protein_coding; cdna;
     (limited to where a RefSeq Protein Identifier Exists)
   * lncRNA : transcript_biotype=lncrna; cdna
-  * lncRNA : transcript_biotype=lncrna; cdna
-  * other : transcript_biotype=[all remaining, excluding miRNA]; transcript_exon_intron
+  * rRNA : transcript_biotype=lncrna; cdna
+  * rRNA : transcript_biotype=[Mt_rRNA, rRNA, rRNA_pseudogene]; transcript_exon_intron
+  * tRNA : transcript_biotype=Mt_tRNA; transcript_exon_intron
+  * other : transcript_biotype=[all remaining]; transcript_exon_intron
 
 For a detailed description of the current sequences and queries utilized, see
 "Current Reference Details" below.
 
 Run Reference Creation Pipeline:
 ================================
-The source code utilized to create the current version of the reference is provided here,
-and has been utilized on a unix system (bash shell).
-This code depends on `SeqKit <https://bioinf.shenwei.me/seqkit/>`_
-for sequence maniuplation, Python 3.6+, and multiple python packages:
+The reference pipeline is designed using Nextflow, and has been tested on Nextflow/23.04.1.
+Dependency handling is performed with conda modules (containerized implementation
+in development).
+
+Required program dependencies are:
+  * `nextflow <https://www.nextflow.io/>`_ (tested v23.04.1)
+  * `seqkit <https://bioinf.shenwei.me/seqkit/>`_ (tested v2.5.1)
+  * `bedops <https://bedops.readthedocs.io/en/latest/>`_ (tested v2.4.39)
 
 Required Python Packages:
-  * `pandas <https://pandas.pydata.org/>`_
-  * `natsort <https://pypi.org/project/natsort/>`_
-  * `pybiomart <https://pypi.org/project/pybiomart/>`_
-  * `biothings-client <https://pypi.org/project/biothings-client/>`_
-  * `biopython <https://biopython.org/>`_
-  * pyyaml
+  * `pandas <https://pandas.pydata.org/>`_ (tested pandas=1.3.5)
+  * `natsort <https://pypi.org/project/natsort/>`_ (tested natsort=7.1.1)
+  * `pybiomart <https://pypi.org/project/pybiomart/>`_ (tested pybiomart=0.2.0)
+  * `biothings-client <https://pypi.org/project/biothings-client/>`_ (tested biothings_client=0.2.6)
+  * `biopython <https://biopython.org/>`_ (tested biopython=1.79)
+  * `pyyaml <https://pyyaml.org/>`_ (tested pyyaml=6.0)
 
-The scripts can be run by executing the first script: "00_run_all_steps.sh" with all
-required resources (seqkit, python3) available on the system path.
+The scripts can be run by executing the first script: "00_run_all.sh" using the presupplied
+conda configuration, or by making all required resources (seqkit, python3) available on the system path.
 
 Hyb Reference Specification:
 ============================
