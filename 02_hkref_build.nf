@@ -603,6 +603,7 @@ process Dedup_Transcripts {
                -sc 1 \\
                -r 0 \\
                -g 0 \\
+               -d 100 \\
 
 
     CLUSTER_COMMAND="!!"
@@ -614,6 +615,7 @@ process Dedup_Transcripts {
       # -r	: 1 or 0, default 1, by default do both +/+ & +/- alignments
       #       if set to 0, only +/+ strand alignment
       # -g  : 1 or 0, if 1 use slow clustering algorithm for best cluster result
+      # -d  : length of description in clstr file
 
     #/apps/cdhit/4.6.8/psi-cd-hit/psi-cd-hit.pl \\
     #              -i !{transcript_fasta} \\
@@ -656,7 +658,7 @@ process Dedup_Transcripts {
 }
 
 process Merge_Transcripts {
-    conda        params.cluster_conda
+    conda        params.python_conda
     tag          { db_name }
     //label        'multi_cpu'
     //label        'cluster'
@@ -699,7 +701,6 @@ process Merge_Transcripts {
 
     shell:
     '''
-    set -v -H -o history
     echo "All input files:    !{in_files}"
     echo "Input Fasta:        !{transcript_fasta}"
     echo "Input Fasta Notes:  !{transcript_note}"
@@ -712,13 +713,13 @@ process Merge_Transcripts {
     echo -e "\nMerging split sequences from file: !{transcript_fasta}"
     set -v -H -o history
 
-    python !{projectDir}/bin/merge_split_seqs.py
+    python !{projectDir}/bin/merge_split_seqs.py \\
            --in_file !{transcript_fasta} \\
            --in_notes !{transcript_note} \\
            --out_file !{out_file} \\
            --out_notes !{out_file}.notes.txt \\
            --out_settings_file !{out_settings_file} \\
-~                                           
+                                        
 
     COMMAND="!!"
 

@@ -124,7 +124,7 @@ def write_notes_file(in_notes_name, out_notes_name, out_file_name, out_settings_
     total_prefix = (' ' * out_settings['total_indent'])
     body_prefix = (' ' * out_settings['body_indent'])
     body_width = (out_settings['final_width'] -
-                    - (out_settings['total_indent']
+                     (out_settings['total_indent']
                        + out_settings['body_indent']))
 
     header = '-- {} --\n'.format(out_file_name)
