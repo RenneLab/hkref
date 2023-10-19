@@ -11,3 +11,4 @@ next.*
 private
 load_resources.source.sh
 *.sbatch
+.pybiomart.sqlite
